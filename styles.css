@@ -17,7 +17,8 @@ body {
 
 .text {
   text-align: center;
-  margin-bottom: 5rem;
+  max-width: 35rem;
+  margin: 0 auto 5rem auto;
 }
 
 h1, h2 {
@@ -45,14 +46,44 @@ h2 {
 
 .cards {
   display: grid;
+  grid-template-areas: 'left' 'top' 'bottom' 'right';
+  justify-content: center;
   gap: 1.5rem;
+}
+
+@media (min-width: 64rem) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+      'left top right'
+      'left bottom right';
+    align-items: center;
+  }
 }
 
 .card {
   background-color: white;
+  max-width: 21rem;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 20px hsl(229, 6%, 90%);
+}
+
+.card.teal {
+  grid-area: left;
+}
+
+.card.red {
+  grid-area: top;
+}
+
+.card.yellow {
+  grid-area: bottom;
+}
+
+.card.blue {
+  grid-area: right;
 }
 
 .colored-line.teal {
