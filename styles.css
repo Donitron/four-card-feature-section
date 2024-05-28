@@ -51,7 +51,7 @@ h2 {
   gap: 1.5rem;
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 60 rem) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
